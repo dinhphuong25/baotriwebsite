@@ -1,17 +1,16 @@
 /* ==========================================================================
-   Rạp Phim Chill (rapphimchill.pro) - Official Emerald Green Brand Theme
+   Rạp Phim Chill (rapphimchill.pro) - Clean Stable Emerald Theme
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Montserrat:wght@800;900&display=swap');
 
 :root {
-  --bg-dark: #080c0a;
-  --bg-card: rgba(15, 24, 20, 0.92);
-  --border-glass: rgba(0, 230, 118, 0.15);
+  --bg-dark: #090d0b;
+  --bg-card: #121a16;
+  --border-card: #1e2c24;
 
-  --accent-green: #00e676;         /* Official Chill Emerald Green */
-  --accent-green-dark: #059669;
-  --accent-green-glow: rgba(0, 230, 118, 0.4);
+  --accent-green: #00e676;
+  --accent-green-hover: #00c853;
   --accent-green-soft: #6ee7b7;
 
   --text-white: #ffffff;
@@ -42,7 +41,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Ambient Background Light */
+/* Ambient Subtle Background Light */
 .bg-ambient {
   position: fixed;
   inset: 0;
@@ -55,28 +54,25 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(0, 230, 118, 0.18) 0%, transparent 68%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 230, 118, 0.12) 0%, transparent 70%);
   border-radius: 50%;
-  filter: blur(120px);
+  filter: blur(100px);
 }
 
-/* Centered Announcement Card */
+/* Centered Notice Card - 100% Solid & Compatible */
 .notice-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid var(--border-glass);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
   border-radius: 20px;
-  max-width: 560px;
+  max-width: 540px;
   width: 100%;
-  padding: 44px 38px;
+  padding: 44px 36px;
   text-align: center;
-  box-shadow: 
-    0 25px 50px -15px rgba(0, 0, 0, 0.85),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85);
   position: relative;
+  margin: auto;
 }
 
 .notice-card::before {
@@ -97,8 +93,8 @@ body {
   gap: 10px;
   padding: 7px 18px;
   border-radius: 999px;
-  background: rgba(0, 230, 118, 0.1);
-  border: 1px solid rgba(0, 230, 118, 0.3);
+  background: rgba(0, 230, 118, 0.08);
+  border: 1px solid rgba(0, 230, 118, 0.25);
   margin-bottom: 24px;
 }
 
@@ -106,25 +102,24 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #00e676, #059669);
+  background: var(--accent-green);
   display: grid;
   place-items: center;
-  box-shadow: 0 0 12px var(--accent-green-glow);
 }
 
 .brand-play-icon svg {
   width: 9px;
   height: 9px;
-  fill: #080c0a;
+  fill: #090d0b;
   margin-left: 1px;
 }
 
 .brand-name {
   font-family: var(--font-logo);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 900;
   color: var(--text-white);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -134,7 +129,7 @@ body {
 
 /* Title */
 .notice-title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
   color: var(--text-white);
   line-height: 1.4;
@@ -142,16 +137,16 @@ body {
   margin-bottom: 20px;
 }
 
-/* Content */
+/* Content Body */
 .notice-body {
-  font-size: 16px;
+  font-size: 15.5px;
   line-height: 1.8;
   color: var(--text-body);
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .notice-body p {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .notice-body p:last-child {
@@ -168,10 +163,50 @@ body {
   font-weight: 600;
 }
 
+/* Fanpage Button */
+.fanpage-btn-wrapper {
+  margin-bottom: 28px;
+}
+
+.btn-fanpage {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--accent-green);
+  color: #090d0b;
+  font-family: var(--font-main);
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 12px 26px;
+  border-radius: 999px;
+  box-shadow: 0 4px 18px rgba(0, 230, 118, 0.3);
+  transition: all 0.25s ease;
+}
+
+.btn-fanpage:hover {
+  background: var(--accent-green-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(0, 230, 118, 0.45);
+}
+
+.btn-fanpage svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+
 /* Footer Line */
 .footer-line {
   font-size: 13px;
   color: var(--text-sub);
-  padding-top: 22px;
+  padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 640px) {
+  .notice-card {
+    padding: 32px 20px;
+  }
 }
